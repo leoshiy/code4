@@ -6,6 +6,7 @@
  
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
         
+        //links to CSS file
         <link rel="stylesheet" href="code4.css"/>
         
     </head>
@@ -20,6 +21,7 @@
                 
             </div>
             
+            //container for buttons 
             <div id="buttonContainer">
                 
                 <div class="toggleButton active" id="html">HTML</div>
@@ -34,6 +36,7 @@
         
         </div>
         
+        //main panels with default text
         <div id="bodyContainer">
         
             <textarea id="htmlPanel" class="panel"><p id="paragraph">Hello World!</p></textarea>
@@ -49,6 +52,7 @@
         
         <script type="text/javascript">
             
+            //allows for the combination of HTML, CSS, and Javascript in Output panel 
             function updateOutput() {
                 
                 $("iframe").contents().find("html").html("<html><head><style type='text/css'>" + $("#cssPanel").val() + "</style></head><body>" + $("#htmlPanel").val() + "</body></html>");
@@ -58,7 +62,7 @@
                 
                 
             }
-            
+            //refer to CSS file to all class calls below
             $(".toggleButton").hover(function() {
                 
                 $(this).addClass("highlightedButton");
@@ -90,7 +94,7 @@
             $(".panel").width(($(window).width() / 2) - 10);
             
             updateOutput();
-            
+            //updates Output panel every time a change is made
             $("textarea").on('change keyup paste', function() {
     
                 updateOutput();
